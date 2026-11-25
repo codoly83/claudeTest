@@ -84,6 +84,7 @@
 - [x] 5-8. `/Guide` 최상단 등록, IA 필터·집계·미리보기, Guide 앵커·예제 및 CSS 격리 확인 — 2026-11-25 AI 점검: IA 첫 행 /Guide, 집계 Done 5, Guide #popover 앵커 이동, Guide 예제 #wrap.guideScope 적용. IA 필터·미리보기 클릭은 사용자 확인 — 2026-11-25 사용자 확인 완료
 - [x] 5-9. `node scripts/check-project.mjs` 실행 후 결과 확인 (정적 보조 검사, `AGENTS.md` 9.1) — 2026-11-25: 스크립트 작성, 통과 11 · 경고 0 · 오류 0 (위반 파일을 넣어 오류 검출도 확인)
 - [x] 5-10. 빌드 파일 나누기: 페이지 지연 로딩(React.lazy), 메뉴용 분류표 분리·스토리 동적 import, 라이브러리별 파일 묶음(vite.config.ts) — 500kB 경고 해소 (사용자 요청, 2026-11-25) — 2026-11-25 사용자 확인 완료
+- [ ] 5-11. GitHub 업로드(https://github.com/codoly83/claudeTest) + GitHub Pages 자동 배포(https://codoly83.github.io/claudeTest/) — 워크플로, 하위 경로 대응 (사용자 요청, 2026-11-25) — 저장소 Settings > Pages 설정 후 사용자 확인 대기
 
 ---
 

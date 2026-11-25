@@ -62,6 +62,8 @@ npm run lint      # 린트 (oxlint, `.oxlintrc.json`)
 node scripts/check-project.mjs   # 프로젝트 규칙 정적 검사 (9.1)
 ```
 
+- **배포:** `main`에 푸시하면 GitHub Actions(`.github/workflows/deploy.yml`)가 GitHub Pages(https://codoly83.github.io/claudeTest/)에 올립니다. 하위 경로는 빌드 시 `BASE_PATH`로 정하며, 코드에서 직접 쓰는 `<a href>`·iframe 경로는 `src/utils/basePath.ts`의 `withBase()`를 씁니다 (React Router `Link`는 basename이 자동으로 붙음).
+
 - 작업 완료 시 `npm run build`로 확인하고, 실행하지 못했다면 그 사실을 명시합니다.
 - 프로젝트 경로에 한글 등 영문이 아닌 문자가 있으면 TypeScript 7·oxlint·Vite(rolldown/esbuild) 실행 파일이 강제 종료됩니다. 프로젝트는 영문 경로(현재 `C:\dev\publish-project`)에 둡니다.
 

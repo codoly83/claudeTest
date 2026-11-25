@@ -3,6 +3,7 @@ import type { FormEvent, SyntheticEvent } from 'react';
 import { IA_INFO, IA_TABLES, TASKS } from '../data/iaData';
 import '../assets/css/ia.css';
 import type { Cell, TaskKey } from '../types';
+import { withBase } from '../utils/basePath';
 
 // IA 관리 화면 (/Ia) — docs/ia-spec.md 기준
 // - 마크업·표시 문구·동작은 원본 Ia.tsx와 동일하게 유지합니다.
@@ -185,7 +186,8 @@ const Ia = () => {
                                                     const className = [cell.className, isDueDate ? getDueDateClass(cell.text) : '']
                                                         .filter(Boolean)
                                                         .join(' ');
-                                                    const href = isFileName && cell.text ? getFileHref(table.path, row) : '';
+                                                    // withBase: 배포 하위 경로(/claudeTest)를 붙임 — 로컬에서는 그대로 (src/utils/basePath.ts)
+                                                    const href = isFileName && cell.text ? withBase(getFileHref(table.path, row)) : '';
                                                     return (
                                                         <td className={className} data-task={isTask ? taskKey : undefined} key={cellIndex}>
                                                             {isFileName && cell.text ? (

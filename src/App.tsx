@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom
 import Layout from './components/layout/Layout';
 import MemberLayout from './components/layout/MemberLayout';
 import Loading from './components/common/Loading';
+import { BASE_PATH } from './utils/basePath';
 
 // 페이지는 처음 들어갈 때 따로 불러옵니다 (React.lazy, 빌드 결과를 페이지별 파일로 나눔)
 const Ia = lazy(() => import('./pages/Ia'));
@@ -21,7 +22,8 @@ const PageLoading = () => <Loading isLoading isFullscreen={false} label="화면�
 
 const App = () => {
     return (
-        <BrowserRouter>
+        // basename: GitHub Pages 하위 경로(/claudeTest)에서도 같은 주소 체계로 동작
+        <BrowserRouter basename={BASE_PATH || undefined}>
             <Routes>
                 {/* 폐지된 /Guide(2026-11-25) 주소는 메인으로 보냄 — 컴포넌트 설명은 메인 목록·명세 화면 */}
                 <Route path="/Guide" element={<Navigate to="/" replace />} />

@@ -4,7 +4,9 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 // 빌드 파일 나누기 (2026-11-25): 큰 라이브러리를 각각 별도 파일로 만들어 500kB 경고를 없애고,
 // 그 라이브러리를 쓰는 화면에 처음 들어갈 때만 내려받게 합니다. 페이지 단위 분리는 App.tsx의 React.lazy.
+// base: GitHub Pages 배포 시 워크플로가 BASE_PATH=/claudeTest/ 를 넘김 (.github/workflows/deploy.yml). 로컬은 '/'
 export default defineConfig({
+  base: process.env.BASE_PATH ?? '/',
   plugins: [react()],
   build: {
     rolldownOptions: {
