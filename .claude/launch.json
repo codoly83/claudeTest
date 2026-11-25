@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:/dev/publish-project", "run", "dev"],
+      "port": 5173
+    }
+  ]
+}
